@@ -1,7 +1,8 @@
 */migrations
-*/include
-*/bin
-*/lib
+include
+bin
+lib
+bandaid/settings.py
 
 # Compiled source #
 ###################

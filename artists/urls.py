@@ -5,5 +5,6 @@ from artists import views
 
 urlpatterns = patterns('',
 	url( r'^signup/$', views.signup, name="signup"),
-  url( r'^(?P<slug>[^\.]+)$', views.artist, name="artist"),
+	url( r'^add-concert/$', views.add_concert, name="add_concert"),
+	url( r'^(?P<slug>[^\.]+)$', views.artist, name="artist"),
 )
