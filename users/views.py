@@ -29,6 +29,9 @@ def user(request, slug=''):
 
 	return render(request, 'user/index.html', context)
 
+def index(request):
+	context = {}
+	return render(request, 'index.html', context)
 # def user(request):
 # 	if slug == 'signup':
 # 		return HttpResponseRedirect('signup/')
