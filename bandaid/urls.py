@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url( r'^markitup/', include('markitup.urls') ),
     url( r'^api/', include('concerts.urls') ),
+    url(r'^artist/', include('artists.urls')),
     #url( r'^', include('vl.urls') ),
 )

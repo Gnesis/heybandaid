@@ -15,10 +15,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'bandaid',# Or path to database file if using sqlite3.
+        'NAME': 'banaid',# Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'rog3r',
-        'PASSWORD': 'rog42();',
+        'USER': 'Gnesis',
+        'PASSWORD': 'Gn3s1s211',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
@@ -119,7 +119,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/rog3r/web/palomazo/bandaid/templates"
+    "/Users/Gnesis/Development/Web/Github-Repositories/heybandaid/templates"
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
