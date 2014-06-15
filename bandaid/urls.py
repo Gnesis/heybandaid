@@ -13,5 +13,5 @@ urlpatterns = patterns('',
     url( r'^markitup/', include('markitup.urls') ),
     url( r'^api/', include('concerts.urls') ),
     url(r'^artist/', include('artists.urls')),
-    #url( r'^', include('vl.urls') ),
+    url( r'^', include('users.urls') ),
 )
