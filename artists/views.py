@@ -6,8 +6,8 @@ from django.http import HttpResponseRedirect
 
 from django.http import HttpResponseBadRequest
 from django.http import HttpResponse
-from models import *
-from forms import *
+from artists.models import Artist
+from artists.forms import ArtistForm, ConcertForm
 
 
 # Create your views here.
@@ -24,21 +24,17 @@ def artist(request, slug=''):
 	return render(request, 'artist/index.html', context)
 
 def signup(request):
-  if request.POST:
-    form = ArtistForm(request.POST)
+  if request.method == 'POST':
+    form = ArtistForm(request.POST, request.FILES)
     if form.is_valid():
-      print form
       newartist = form.save(commit=False)
-      print newartist
-      #print request.FILES
       newartist.name = request.POST['name']
       newartist.email = request.POST['email']
       newartist.password = request.POST['password']
-      #newartist.slug = request.POST['slug']
-      #newartist.photo = request.FILES['photo']
-      #newartist.description = request.POST['description']
+      newartist.slug = slugify(request.POST['name'])
+      newartist.photo = request.FILES['photo']
+      newartist.description = request.POST['description']
       newartist.save()
-      #print newartist.photo
 
       # Solo ejecuta con JQuery Request
       if request.is_ajax():
@@ -62,3 +58,10 @@ def signup(request):
     form = ArtistForm()
 
   return render(request, 'artist/register.html', {'form':form})
+
+def add_concert( request ):
+  if request.method == 'POST':
+    form = ConcertForm(request.POST, request.FILES)
+  else:
+    form = ConcertForm()
+  return render(request, 'artist/concert.html', {'form':form} )
